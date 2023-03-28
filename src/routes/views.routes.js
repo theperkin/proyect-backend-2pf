@@ -9,12 +9,12 @@ const CARTS_URL = 'http://localhost:8080/api/carts'
 const prodManagerData = await getManagerProducts()
 const prodManager = new prodManagerData()
 
-routerViews.get('/products', async (req, res) => {
+routerViews.get('/', async (req, res) => {
 
-    const response = await fetch(PRODUCTS_URL)
-    const data = await response.json()
+    const promise = await fetch(PRODUCTS_URL)
+    const response = await promise.json()
 
-    const { status, payload, totalPages, prevPage, nextPage, page, hasPrevPage, hasNextPage, prevLink, nextLink } = data
+    const { status, payload, totalPages, prevPage, nextPage, page, hasPrevPage, hasNextPage, prevLink, nextLink } = response
 
     res.render('products', {
         status,

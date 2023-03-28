@@ -15,7 +15,8 @@ const productSchema = new Schema({
     },
     price: {
         type: Number,
-        required: true
+        required: true,
+        index: true
     },
     code: {
         type: String,
@@ -32,7 +33,8 @@ const productSchema = new Schema({
     },
     category: {
         type: String,
-        required: true
+        required: true,
+        index: true
     },
     thumbnail: {
         type: Array,

@@ -9,6 +9,7 @@ import routerProducts from './routes/products.routes.js'
 import routerSocket from './routes/socket.routes.js'
 import routerCart from './routes/carts.routes.js'
 import routerViews from './routes/views.routes.js'
+import MongoStore from 'connect-mongo'
 
 const app = express()
 
@@ -33,6 +34,7 @@ app.use('/api/products', routerProducts)
 app.use('/api/carts', routerCart)
 app.use('/chat', routerSocket)
 app.use('/', routerViews)
+
 
 const server = app.listen(app.get("port"), ()=> console.log(`Server on port ${app.get("port")}`))
 

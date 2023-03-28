@@ -9,7 +9,7 @@ export class ManagerMongoDB {
         this.model = mongoose.model(this.collection, this.schema)
     }
 
-    async _setConnection() {
+    async _setConnection() { 
         try {
             await mongoose.connect(this.#url)
             console.log("MongoDB connected")
@@ -18,7 +18,7 @@ export class ManagerMongoDB {
         }
     }
 
-    async addElements(elements) {
+    async addElements(elements) { 
         this._setConnection()
         try {
             const insertar = await this.model.insertMany(elements)
